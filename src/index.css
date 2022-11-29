@@ -1,0 +1,22 @@
+  @font-face {
+    font-family: 'Pokemon';
+    src: url('./assets/fonts/Pokemon Solid.ttf');
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'Roboto Mono';
+    src: url('./assets/fonts/RobotoMono.ttf');
+  }
+
+  @font-face {
+    font-family: 'Press Start 2P';
+    src: url('./assets/fonts/PressStart.ttf');
+  }
+
+  @font-face {
+    font-family: 'Staatliches';
+    src: url('./assets/fonts/Staatliches-Regular.ttf');
+  }   
+    
