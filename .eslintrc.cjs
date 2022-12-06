@@ -22,7 +22,8 @@ module.exports = {
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'no-unused-vars': 'warn'
+    'no-unused-vars': 'warn',
+    camelcase: 'off'
   },
   ignorePatterns: ['src/**/*.css', 'src/**/*.svg']
 }

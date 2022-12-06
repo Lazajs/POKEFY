@@ -3,19 +3,20 @@ import { COLORS, FONTS } from '@/constants/default'
 
 export const Logo = styled.img`
   width: 15rem;
-  margin: 3rem;
+  margin: 2rem 3rem 1rem 3rem;
 `
 
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 95%;
 `
 
 export const Nav = styled.nav`
+  width: 100%;
   min-width: 35rem;
-  width: 60%;
+  max-width: 55rem;
   position: relative;
 `
 
@@ -27,7 +28,7 @@ export const Input = styled.input`
   font-size: 1.8rem;
   background-color: ${COLORS.PRIMARY};
   font-family: ${FONTS.ROBOTO};
-  padding-left: 5rem;
+  padding : 1rem 0 1rem 6rem;
   font-style: normal;
 `
 
