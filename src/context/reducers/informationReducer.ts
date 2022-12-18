@@ -1,16 +1,12 @@
-import type { Action } from 'types'
-import { GET_SPRITES } from '../actions'
+import type { Action, Info } from 'types'
+import { SPRITES } from '../actions'
 
-const defSprites = [{ name: '', sprites: { front: '', back: '', frontShiny: '', backShiny: '' } }]
-
-type Sprite = {name: string, sprites: {front: string, back: string, frontShiny: string, backShiny: string}}
-
-export default function informationReducer (state: Sprite[] = defSprites, action: Action) {
+export default function informationReducer (state: Info[] = [], action: Action) {
   const { payload, type } = action
 
   switch (type) {
-    case GET_SPRITES:
-      return [...state, { name: payload.name, sprites: payload.sprites }]
+    case SPRITES:
+      return [...state, { ...payload }]
     default:
       return state
   }

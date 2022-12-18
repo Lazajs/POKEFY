@@ -1,7 +1,7 @@
 import type { Action, Pokedex } from 'types'
 import { INIT, NEXT } from '../actions'
 
-const defPokedex = { list: [{ name: '', url: '' }], next: '' }
+const defPokedex = { list: [], next: '' }
 
 export default function pokedexReducer (state: Pokedex = defPokedex, action: Action) {
   const { payload, type } = action

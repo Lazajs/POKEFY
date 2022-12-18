@@ -19,7 +19,6 @@ export default function usePokedex () {
 
     const data = await fetch(url || URL)
     const response = await data.json()
-    console.log(response)
     if (url) dispatch(createNext(response))
     else return response
   }

@@ -1,6 +1,18 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { COLORS, FONTS } from '@/constants/default'
 
+type ItemProps = {
+  height?: string
+}
+
+type ItemAttr = {
+  left: number
+}
+
+type ImageProps = {
+  width?: string
+}
+
 export const Wrapper = styled.main`
   font-family: ${FONTS.POKEMON};
   max-width: 60vw;
@@ -43,20 +55,28 @@ export const List = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 70%;
   margin-top: 4rem;
 `
 
-export const Item = styled.section`
+export const Item = styled.section.attrs<ItemAttr>(props => ({
+  style: {
+    marginLeft: props.left || 0
+  }
+}))<ItemProps>`
+  user-select: none;
   width: 100%;
   min-width: 35rem;
-  height: 10rem;
+  transition: height 100ms;
+  height: ${props => props.height || '10rem'};
   background-color: ${COLORS.SECONDARY};
   margin-top: 1rem;
   border-radius: 5px;
   display: flex;
   align-items: center;
-  box-shadow: 0 3px 3px #000;
+  cursor: grab;
+  position: relative;
+  box-shadow: ${props => !props.height ? '0 3px 3px #000' : ''};
 
   &:active {
     box-shadow: none;
@@ -67,41 +87,23 @@ export const Icon = styled.strong`
   font-family: ${FONTS.START};
   color: #f00;
   margin-left: auto;
-  margin-right: 1rem;
+  margin-right: 0;
+  font-size: 12px;
+  padding: 1rem;
 `
 
 export const Name = styled.p`
   font-family: ${FONTS.STAATLICHES};
   font-size: 4rem;
+  margin-left: .5rem;
 `
 
-export const Spin = styled.div`
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  
-  &:after {
-    content: " ";
-    display: block;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border-radius: 50%;
-    border: 6px solid #f00;
-    border-color: #f00 transparent #f00 transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
-  }
+export const Image = styled.img<ImageProps>`
+  width: ${props => props.width || '9rem'};
+`
 
-  @keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+export const FlavorText = styled.p`
+  text-align: center;
+  margin: .5rem;
+  font-family: ${FONTS.STAATLICHES};
 `

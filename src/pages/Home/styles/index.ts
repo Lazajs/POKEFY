@@ -38,3 +38,27 @@ export const Pokeball = styled.img`
   top: 50%;
   transform: translateY(-50%);
 `
+
+export const CardWrapper = styled.div`
+  width: 50rem;
+  height: 50rem;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left:0;
+`
+
+export const ActionWrapper = styled.section`
+  margin: auto;
+  display: block;
+  font-family: ${FONTS.STAATLICHES};
+  color: #000b;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: .3rem;
+  text-align: center;
+`
+
+export const ActionEmphasis = styled.span`
+  text-decoration: underline;
+`
