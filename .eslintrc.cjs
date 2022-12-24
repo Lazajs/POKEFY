@@ -25,5 +25,5 @@ module.exports = {
     'no-unused-vars': 'warn',
     camelcase: 'off'
   },
-  ignorePatterns: ['src/**/*.css', 'src/**/*.svg']
+  ignorePatterns: ['src/**/*.css', 'src/**/*.svg', 'src/**/*.ttf', 'src/**/*.png']
 }

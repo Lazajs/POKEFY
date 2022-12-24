@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 interface Style {
   local?: string
+  top?: string
 }
 export const Spin = styled.div<Style>`
   display: inline-block;
@@ -9,6 +10,7 @@ export const Spin = styled.div<Style>`
   position: ${props => props.local ? 'relative' : 'absolute'};
   left: 50%;
   top: 50%;
+  margin-top: ${props => props.top ? props.top : '0'};
   transform: translate(-50%, -50%);
   
   &:after {
@@ -33,6 +35,6 @@ export const Spin = styled.div<Style>`
   }
 `
 
-export default function Spinner ({ local }: Style) {
-  return <Spin local={local} className="lds-dual-ring"></Spin>
+export default function Spinner ({ local, top }: Style) {
+  return <Spin local={local} top={top} className="lds-dual-ring"></Spin>
 }

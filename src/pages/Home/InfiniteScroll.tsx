@@ -24,6 +24,6 @@ export default function InifinteScroll () {
   }, [infinite?.current, pokedex.next])
 
   return <div ref={infinite} onClick={handleObserver} className="infinity">
-    <Spinner local='true' />
+    <Spinner local='true' top='8rem'/>
   </div>
 }

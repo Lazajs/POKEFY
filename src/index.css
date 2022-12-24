@@ -19,4 +19,7 @@
     font-family: 'Staatliches';
     src: url('./assets/fonts/Staatliches-Regular.ttf');
   }   
-    
+
+body, html {
+  overflow-x: hidden;
+}

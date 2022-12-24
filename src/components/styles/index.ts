@@ -3,6 +3,7 @@ import { COLORS, FONTS } from '@/constants/default'
 
 type ItemProps = {
   height?: string
+  left?: number
 }
 
 type ItemAttr = {
@@ -59,7 +60,7 @@ export const List = styled.section`
   margin-top: 4rem;
 `
 
-export const Item = styled.section.attrs<ItemAttr>(props => ({
+export const Item = styled.article.attrs<ItemAttr>(props => ({
   style: {
     marginLeft: props.left || 0
   }
@@ -106,4 +107,15 @@ export const FlavorText = styled.p`
   text-align: center;
   margin: .5rem;
   font-family: ${FONTS.STAATLICHES};
+`
+export const Logo = styled.img`
+  width: 15rem;
+  margin: 2rem 3rem 1rem 3rem;
+`
+
+export const Heading = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
 `

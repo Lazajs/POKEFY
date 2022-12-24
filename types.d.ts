@@ -29,7 +29,7 @@ export interface Species {
   habitat: string
 }
 
-interface Abilities {
+export interface Abilities {
   name: string,
   url: string
 }

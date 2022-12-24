@@ -1,5 +1,4 @@
 import type { Info } from 'types'
-import { useMemo, useEffect } from 'react'
 import Spinner from '@/components/Spinner'
 import useSpecie from '@/hooks/useSpecie'
 import { Image, FlavorText, Icon } from '../styles'
@@ -9,14 +8,7 @@ type Props = {
 }
 
 export default function ActiveContent ({ content } : Props) {
-  const { species, getSpecie } = useSpecie()
-  const thisSpecie = useMemo(() => { return species.find(e => e.name === content.name) }, [species])
-
-  useEffect(() => {
-    if (!thisSpecie && content?.species) {
-      getSpecie(content.species.url)
-    }
-  }, [])
+  const { thisSpecie } = useSpecie(content.name, content.species.url)
 
   return (
     <>

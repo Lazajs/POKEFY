@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '@/context/store'
 import { createInformation } from '@/context/creators'
@@ -8,6 +8,7 @@ export default function useInformation (name: string) {
   const information = useSelector((state: RootState) => state.information)
   const order = useOrder()
   const dispatch = useDispatch()
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     async function getPokemonData () {
@@ -19,8 +20,9 @@ export default function useInformation (name: string) {
       return json
     }
 
-    getPokemonData()
+    getPokemonData().catch(() => setError(true))
   }, [])
+
   const pokemon = information.find(e => e.name === name)
-  return { pokemon, information }
+  return { pokemon, information, error }
 }

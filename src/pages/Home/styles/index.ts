@@ -1,18 +1,6 @@
 import styled from 'styled-components'
 import { COLORS, FONTS } from '@/constants/default'
 
-export const Logo = styled.img`
-  width: 15rem;
-  margin: 2rem 3rem 1rem 3rem;
-`
-
-export const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 95%;
-`
-
 export const Nav = styled.nav`
   width: 100%;
   min-width: 35rem;
@@ -52,7 +40,7 @@ export const ActionWrapper = styled.section`
   margin: auto;
   display: block;
   font-family: ${FONTS.STAATLICHES};
-  color: #000b;
+  color: #0005;
   font-size: 1.4rem;
   line-height: 1.2;
   margin: .3rem;
