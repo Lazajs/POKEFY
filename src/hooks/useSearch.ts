@@ -10,7 +10,7 @@ export default function useSearch () {
   const order = useOrder()
 
   const search = (name: string) => {
-    const URL = `https://pokeapi.co/api/v2/pokemon/${name}`
+    const URL = `https://pokeapi.co/api/v2/pokemon/${name.trim().toLowerCase()}`
 
     fetch(URL)
       .then(res => res.json())
