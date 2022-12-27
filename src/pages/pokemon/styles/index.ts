@@ -91,7 +91,7 @@ export const DescriptionText = styled.button<Color>`
   display:block;
   margin: 1rem auto;
   border: none;
-  background-color: ${props => props.color ? props.color : 'transparent'};
+  background-color: ${props => props.color && props.color !== 'black' ? props.color : 'transparent'};
   border-radius: 1px;
   cursor: pointer;
 `

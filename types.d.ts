@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react'
+
 export interface Action {
   type: string | number | Array,
   payload?: string | number | Array
@@ -44,4 +46,10 @@ export interface Info {
   order: number,
   abilities: Abilities[],
   species: {url: string},
+}
+
+export interface SearchParams {
+  setQuery?: Dispatch<SetStateAction<string>>
+  query?: string
+  result?: Pokemon
 }

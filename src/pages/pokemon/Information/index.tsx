@@ -17,17 +17,9 @@ export default function Information ({ weight, height, order, generation, habita
       <ShownInfoStats name='weight' > {weight} </ShownInfoStats>
       <ShownInfoStats name='height'> {height} </ShownInfoStats>
       <ShownInfoStats name='order'> {order} </ShownInfoStats>
-      {
-        generation && habitat && shape
-          ? (
-          <>
-            <ShownInfoStats name='generation'>{generation}</ShownInfoStats>
-            <ShownInfoStats name='habitat'>{habitat}</ShownInfoStats>
-            <ShownInfoStats name='shape'>{shape}</ShownInfoStats>
-          </>
-            )
-          : ''
-      }
+      {generation && <ShownInfoStats name='generation'>{generation}</ShownInfoStats>}
+      {habitat && <ShownInfoStats name='habitat'>{habitat}</ShownInfoStats>}
+      {shape && <ShownInfoStats name='shape'>{shape}</ShownInfoStats>}
     </CardSection>
   )
 }

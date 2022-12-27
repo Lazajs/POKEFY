@@ -12,14 +12,14 @@ export default function useSpecies (name: string, url: string) {
     const request = await fetch(url)
     const json = await request.json()
     const { generation, flavor_text_entries, shape, habitat, name, color } = json
-    console.log(flavor_text_entries)
+
     const RESULT = {
       name,
       color: color.name,
       generation: generation.name,
       text: flavor_text_entries.find((e: any) => e.language.name === 'en').flavor_text || flavor_text_entries[0].flavor_text,
       shape: shape.name,
-      habitat: habitat.name
+      habitat: habitat?.name
     }
 
     dispatch(createSpecie(RESULT))

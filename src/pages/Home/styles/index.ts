@@ -43,8 +43,15 @@ export const ActionWrapper = styled.section`
   color: #0005;
   font-size: 1.4rem;
   line-height: 1.2;
-  margin: .3rem;
   text-align: center;
+
+  & > p > a {
+    color: #0009;
+
+    &:active, &:visited, &:focus {
+      color: #0009;
+    }
+  }
 `
 
 export const ActionEmphasis = styled.span`
