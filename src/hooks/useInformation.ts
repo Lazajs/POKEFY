@@ -14,6 +14,7 @@ export default function useInformation (name: string) {
     async function getPokemonData () {
       const URL = `https://pokeapi.co/api/v2/pokemon/${name}`
       const res = await fetch(URL)
+      if (res.ok) setError(false)
       const json = await res.json()
       const toSave = order(json)
       if (toSave) dispatch(createInformation(toSave))
